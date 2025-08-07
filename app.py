@@ -27,7 +27,7 @@ openai.api_key = st.secrets.openai.api_key
 def load_data():
     with st.spinner(text="Loading, please wait... This may take 1-2 minutes."):
         # Load the finetuned model 
-        ft_model_name = "ft:gpt-3.5-turbo-0125:dab07:tiffany:C1p3oxW6"
+        ft_model_name = "ft:gpt-3.5-turbo-0125:dab07:leon-experiment:C1ohW0IB"
         
         # Configure Settings with the finetuned model (new approach)
         Settings.llm = OpenAI(model=ft_model_name, temperature=0.3)
@@ -113,6 +113,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
             
             # Append the assistant's response to the chat history
             st.session_state.messages.append({"role": "assistant", "content": response.response})
+
 
 
 
